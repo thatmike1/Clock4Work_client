@@ -8,7 +8,7 @@ const ManualNewMonth = () => {
   async function handleAddNewMonth() {
     try {
       const response = await fetch(
-        'https://clock4workserver.onrender.com/createNewMonthForUser',
+        'https://clock4-work-server.vercel.app/createNewMonthForUser',
         {
           method: 'POST',
           headers: {

@@ -39,7 +39,7 @@ const Login = () => {
       const name = result.user.displayName;
       if (OperationType != 'signIn') {
         const response = await fetch(
-          'https://clock4workserver.onrender.com/createUser',
+          'https://clock4-work-server.vercel.app/createUser',
           {
             method: 'POST',
             headers: {

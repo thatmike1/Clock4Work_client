@@ -26,7 +26,7 @@ const Login = () => {
       .then((user) => {
         console.log(user);
         // Call the API to create a user in your database
-        fetch('https://clock4workserver.onrender.com/createUser', {
+        fetch('https://clock4-work-server.vercel.app/createUser', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ const Login = () => {
       .then((result) => {
         console.log(result);
         // Call the API to create a user in your database
-        fetch('https://clock4workserver.onrender.com/createUser', {
+        fetch('https://clock4-work-server.vercel.app/createUser', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
