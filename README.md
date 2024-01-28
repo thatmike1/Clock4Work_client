@@ -1,0 +1,2 @@
+# Avarita attendance thingy
+
