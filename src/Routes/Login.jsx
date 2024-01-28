@@ -9,6 +9,7 @@ import {
   GoogleAuthProvider,
   OperationType,
 } from 'firebase/auth';
+import Header from '@/components/Header';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -59,41 +60,44 @@ const Login = () => {
     }
   }
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen m-0 p-0 overflow-hidden">
-      <div className="w-[300px]">
-        <h2>Přihlášení do Clock4Work</h2>
+    <>
+      <Header login />
+      <div className="flex flex-col items-center justify-center min-h-screen m-0 p-0 overflow-hidden">
+        <div className="w-[300px]">
+          <h2>Přihlášení do Clock4Work</h2>
 
-        <form onSubmit={(e) => handleLogin(e)}>
-          <Input
-            onChange={(e) => setEmail(e.target.value)}
-            type="text"
-            placeholder="E-mail"
-            className="my-6"
-          />
-          <Input
-            onChange={(e) => setPwd(e.target.value)}
-            type="password"
-            placeholder="Heslo"
-            className="my-6"
-          />
+          <form onSubmit={(e) => handleLogin(e)}>
+            <Input
+              onChange={(e) => setEmail(e.target.value)}
+              type="text"
+              placeholder="E-mail"
+              className="my-6"
+            />
+            <Input
+              onChange={(e) => setPwd(e.target.value)}
+              type="password"
+              placeholder="Heslo"
+              className="my-6"
+            />
 
-          <Button className="w-full" type="submit" variant="outline">
-            Přihlásit se
-          </Button>
-        </form>
-        <div className="my-4">
-          <h2 className="text-center my-4">Nebo...</h2>
+            <Button className="w-full" type="submit" variant="outline">
+              Přihlásit se
+            </Button>
+          </form>
+          <div className="my-4">
+            <h2 className="text-center my-4">Nebo...</h2>
 
-          <Button
-            className="w-full"
-            variant="outline"
-            onClick={handleGoogleSignup}
-          >
-            Přihlásit se přes Google
-          </Button>
+            <Button
+              className="w-full"
+              variant="outline"
+              onClick={handleGoogleSignup}
+            >
+              Přihlásit se přes Google
+            </Button>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

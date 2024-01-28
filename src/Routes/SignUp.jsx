@@ -9,6 +9,7 @@ import {
   GoogleAuthProvider,
 } from 'firebase/auth';
 import { Form } from '@/components/ui/form';
+import Header from '@/components/Header';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -80,51 +81,54 @@ const Login = () => {
   }; //end of handlesignup
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen m-0 p-0 overflow-hidden">
-      <div className="w-[300px]">
-        <h1>Registrace</h1>
+    <>
+      <Header signup />
+      <div className="flex flex-col items-center justify-center min-h-screen m-0 p-0 overflow-hidden">
+        <div className="w-[300px]">
+          <h1>Registrace</h1>
 
-        <Form>
-          <Input
-            onChange={(e) => setName(e.target.value)}
-            type="text"
-            placeholder="Vaše jméno"
-            className="my-6"
-          />
-          <Input
-            onChange={(e) => setEmail(e.target.value)}
-            type="email"
-            placeholder="E-mail"
-            className="my-6"
-          />
-          <Input
-            onChange={(e) => setPwd(e.target.value)}
-            type="password"
-            placeholder="Heslo"
-            className="my-6"
-          />
+          <Form>
+            <Input
+              onChange={(e) => setName(e.target.value)}
+              type="text"
+              placeholder="Vaše jméno"
+              className="my-6"
+            />
+            <Input
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              placeholder="E-mail"
+              className="my-6"
+            />
+            <Input
+              onChange={(e) => setPwd(e.target.value)}
+              type="password"
+              placeholder="Heslo"
+              className="my-6"
+            />
 
-          <Button
-            className="w-full"
-            onClick={(e) => handleSignUp(e)}
-            variant="outline"
-          >
-            Zaregistrujte se
-          </Button>
-        </Form>
-        <div className="my-4">
-          <h2 className="text-center my-4">Nebo...</h2>
+            <Button
+              className="w-full"
+              onClick={(e) => handleSignUp(e)}
+              variant="outline"
+            >
+              Zaregistrujte se
+            </Button>
+          </Form>
+          <div className="my-4">
+            <h2 className="text-center my-4">Nebo...</h2>
 
-          <Button
-            className="w-full"
-            variant="outline"
-            onClick={handleGoogleSignup}
-          >
-            Přihlásit/registrovat se přes Google
-          </Button>
+            <Button
+              className="w-full"
+              variant="outline"
+              onClick={handleGoogleSignup}
+            >
+              Přihlásit/registrovat se přes Google
+            </Button>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

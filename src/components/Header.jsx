@@ -1,6 +1,7 @@
 import MonthDropdown from './MonthDropdown';
 import { Button } from '@/components/ui/button';
 import { signOut } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 const Header = ({
   selectedMonth,
@@ -9,6 +10,8 @@ const Header = ({
   auth,
   username,
   photoURL,
+  login,
+  signup,
 }) => {
   async function handleSignOut() {
     try {
@@ -16,6 +19,30 @@ const Header = ({
     } catch (error) {
       console.log(error);
     }
+  }
+
+  const navigate = useNavigate();
+
+  if (signup) {
+    return (
+      <div className="p-1">
+        <div className="rounded-lg border p-3 bg-muted/20 flex justify-end items-center">
+          <Button onClick={() => navigate('/login')} variant="outline">
+            Přihlásit se
+          </Button>
+        </div>
+      </div>
+    );
+  } else if (login) {
+    return (
+      <div className="p-1">
+        <div className="rounded-lg border p-3 bg-muted/20 flex justify-end items-center">
+          <Button onClick={() => navigate('/signup')} variant="outline">
+            Registrovat se
+          </Button>
+        </div>
+      </div>
+    );
   }
 
   return (
