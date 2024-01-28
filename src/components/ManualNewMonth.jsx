@@ -8,7 +8,7 @@ const ManualNewMonth = () => {
   async function handleAddNewMonth() {
     try {
       const response = await fetch(
-        'http://localhost:5000/createNewMonthForUser',
+        'https://clock4workserver.onrender.com/createNewMonthForUser',
         {
           method: 'POST',
           headers: {

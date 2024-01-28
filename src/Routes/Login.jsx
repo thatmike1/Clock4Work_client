@@ -37,16 +37,19 @@ const Login = () => {
 
       const name = result.user.displayName;
       if (OperationType != 'signIn') {
-        const response = await fetch('http://localhost:5000/createUser', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            userId: result.user.uid,
-            name,
-          }),
-        });
+        const response = await fetch(
+          'https://clock4workserver.onrender.com/createUser',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              userId: result.user.uid,
+              name,
+            }),
+          }
+        );
         console.log(result);
       }
 
