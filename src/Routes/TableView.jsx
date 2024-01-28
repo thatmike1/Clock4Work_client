@@ -116,7 +116,7 @@ const TableView = () => {
               <h2>Celkový počet odpracovaných hodin: {totalHoursWorked}</h2>
               <h2>Celková počet pole zaplaceno: {totalPaid}</h2>
 
-              <ManualNewMonth />
+              <ManualNewMonth userID={userID} />
             </div>
           </ResizablePanel>
         </ResizablePanelGroup>

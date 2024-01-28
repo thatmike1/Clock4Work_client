@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Input } from './ui/input';
 import { Button } from './ui/button';
 
-const ManualNewMonth = () => {
+const ManualNewMonth = ({ userID }) => {
   const [monthName, setMonthName] = useState('');
 
   async function handleAddNewMonth() {
